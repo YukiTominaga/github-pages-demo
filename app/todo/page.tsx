@@ -18,7 +18,7 @@ export default function TodoPage() {
   const addTask = () => {
     if (newTaskTitle.trim()) {
       const task: Task = {
-        id: Date.now().toString(),
+        id: crypto.randomUUID(),
         title: newTaskTitle.trim(),
         completed: false,
         parentId: null,
@@ -31,7 +31,7 @@ export default function TodoPage() {
   const addSubtask = (parentId: string) => {
     if (newSubtaskTitle.trim()) {
       const subtask: Task = {
-        id: Date.now().toString(),
+        id: crypto.randomUUID(),
         title: newSubtaskTitle.trim(),
         completed: false,
         parentId,
